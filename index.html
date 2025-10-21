@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mario Matemático</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <img src="img/logotipo.jpg" alt="Logo Mario Matemático" id="logo">
+    <h1>🎮 Mario Matemático</h1>
+    <p class="descripcion">
+      Responde las operaciones matemáticas y ayuda a Mario a superar los niveles.
+    </p>
+  </header>
+
+  <!-- Pantalla de registro -->
+  <main>
+    <section id="pantallaInicio">
+      <h2>Registro</h2>
+      <input type="text" id="nombreJugador" placeholder="Escribe tu nombre" />
+      <button onclick="registrarJugador()">Registrar</button>
+    </section>
+
+    <!-- Info del jugador (mostrado después del registro) -->
+    <section id="infoJugador" class="oculto">
+      <p id="saludo">👋 Hola</p>
+      <p>🎯 Puntos: <span id="puntos">0</span></p>
+      <p>🏆 Record: <span id="record">0</span></p>
+      <p>📈 Nivel: <span id="nivel">1</span> / 20</p>
+      <div class="botones-info">
+        <button id="btnJugar">Jugar</button>
+      </div>
+    </section>
+
+    <!-- Contenedor del juego -->
+    <section id="contenedorJuego" class="oculto">
+      <h2 class="tituloJuego">🎮 Mario Matemático</h2>
+
+      <div id="game">
+        <div id="mario" aria-hidden="true"></div>
+
+        <div id="escenario">
+          <!-- Bloques y monedas se generan dinámicamente -->
+          <div id="suelo"></div>
+        </div>
+
+        <div id="mensaje" role="status" aria-live="polite"></div>
+      </div>
+
+      <!-- Caja de preguntas -->
+      <div id="preguntaBox" class="oculto" aria-hidden="true">
+        <p id="preguntaTexto"></p>
+        <input type="text" id="inputRespuesta" placeholder="Tu respuesta" />
+        <button onclick="verificar()">Responder</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2025 E&E MATH GAMES</p>
+    <div class="controles">
+      <button onclick="location.reload()">Inicio</button>
+      <button onclick="window.close()">Salir</button>
+    </div>
+    <p><a href="esthercorovalle@gmail.com ">Contacto</a> | <a href="www.eemathgames.bo" target="_blank">Sitio Oficial</a></p>
+  </footer>
+
+  <!-- 🎵 MÚSICA Y SONIDOS -->
+  <!-- Música de fondo -->
+  <audio id="musicaFondo" src="audio de fondo (2).mp3" loop preload="auto"></audio>
+  
+  <!-- Efecto de salto -->
+  <audio id="sonidoSalto" src="audio de salto.mp3" preload="auto"></audio>
+  
+  <!-- Efecto al golpear bloque -->
+  <audio id="sonidoBloque" src="audio de bloque.mp3" preload="auto"></audio>
+
+  <!-- Script del juego -->
+  <script src="game.js"></script>
+</body>
+</html>

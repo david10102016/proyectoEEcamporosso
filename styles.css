@@ -1,0 +1,171 @@
+body {
+background: #6aaaff;
+display: flex;
+flex-direction: column;
+align-items: center;
+font-family: 'Press Start 2P', cursive;
+margin: 0;
+}
+
+h1 {
+color: white;
+text-shadow: 2px 2px #000;
+}
+
+header {
+text-align: center;
+padding: 20px;
+background: #0044aa;
+color: white;
+}
+
+#logo {
+width: 400px;
+height: auto;
+}
+
+.descripcion {
+font-size: 14px;
+margin-top: 10px;
+color: #f0f0f0;
+}
+
+footer {
+margin-top: 30px;
+padding: 15px;
+background: #222;
+color: white;
+text-align: center;
+width: 100%;
+}
+
+footer .controles button {
+margin: 5px;
+padding: 8px 15px;
+font-size: 14px;
+}
+
+footer a {
+color: #00ffcc;
+text-decoration: none;
+}
+
+#pantallaInicio {
+margin-top: 50px;
+text-align: center;
+}
+
+#pantallaInicio input {
+padding: 10px;
+font-size: 16px;
+margin: 10px;
+}
+
+#pantallaInicio button {
+padding: 10px 20px;
+font-size: 16px;
+}
+
+#infoJugador {
+background: #f3e5ab;
+padding: 15px;
+border-radius: 10px;
+margin: 20px;
+text-align: center;
+}
+
+#game {
+width: 800px;
+height: 400px;
+border: 3px solid black;
+background: url("img/fondo.jpg") repeat-x;
+background-size: cover;
+position: relative;
+overflow: hidden;
+}
+
+#mario {
+width: 60px;
+height: 60px;
+background: url("img/mario corriendoxd.png") no-repeat center/cover;
+position: absolute;
+bottom: 50px;
+left: 50px;
+transform: perspective(300px) rotateY(15deg);
+box-shadow: 5px 5px 15px rgba(25, 212, 229, 0.847);
+}
+
+.caminar {
+animation: caminar 0.5s steps(4) infinite;
+}
+
+@keyframes caminar {
+from { background-position: 0 0; }
+to { background-position: -256px 0; }
+}
+
+.bloque {
+position: absolute;
+width: 48px;
+height: 48px;
+background: url("img/caja.jpg") no-repeat;
+background-size: contain;
+image-rendering: pixelated;
+}
+
+#escenario {
+position: absolute;
+width: 20000px;
+height: 400px;
+bottom: 0;
+left: 0;
+}
+
+#suelo {
+position: absolute;
+bottom: 0;
+width: 20000px;
+height: 48px;
+background: url("img/ladrillos.jpg") repeat-x;
+background-size: contain;
+image-rendering: pixelated;
+}
+
+#preguntaBox {
+margin-top: 20px;
+padding: 15px;
+border-radius: 10px;
+background: #0bf4e469;
+display: flex;
+gap: 10px;
+align-items: center;
+}
+
+.oculto {
+display: none;
+}
+
+#mensaje {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 24px;
+font-weight: bold;
+text-shadow: 2px 2px 2px #000;
+display: none;
+z-index: 10;
+}
+
+.correcto {
+color: #00ff00;
+}
+
+.incorrecto {
+color: #ff3333;
+}
+
+@keyframes girar {
+0% { transform: rotateY(0deg); }
+100% { transform: rotateY(360deg); }
+}
